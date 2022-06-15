@@ -1,9 +1,9 @@
 # root account id
-ACCOUNT_ID=$(aws sts get-caller-identity \
-    --query 'Account' \
-    --profile $AWS_PROFILE \
-    --output text)
-log ACCOUNT_ID $ACCOUNT_ID
+#ACCOUNT_ID=$(aws sts get-caller-identity \
+#    --query 'Account' \
+#    --profile $AWS_PROFILE \
+#    --output text)
+#log ACCOUNT_ID $ACCOUNT_ID
 
 # add login data into /home/$USER/.docker/config.json
 aws ecr get-login-password \
