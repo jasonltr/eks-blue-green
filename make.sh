@@ -12,6 +12,7 @@ PROJECT_NAME=eks-blue-green
 # the directory containing the script file
 #PROJECT_DIR="$(cd "$(dirname "$0")"; pwd)"
 PROJECT_DIR=/tmp/aws
+ACCOUNT_ID=804774874907
 
 export AWS_PROFILE AWS_REGION PROJECT_NAME PROJECT_DIR
 
@@ -131,6 +132,7 @@ k8s-1.0.0() {
     kubectl apply --filename namespace.yaml
 
     source "$PROJECT_DIR/.ecr"
+    export REPOSITORY_URI='804774874907.dkr.ecr.us-east-1.amazonaws.com/eks-blue-green'
     export DOCKER_IMAGE=$REPOSITORY_URI:1.0.0
     export LABEL_VERSION=1-0-0
     log DOCKER_IMAGE $DOCKER_IMAGE
@@ -152,6 +154,7 @@ k8s-1.1.0-green() {
     cd "$PROJECT_DIR/k8s"
 
     source "$PROJECT_DIR/.ecr"
+    export REPOSITORY_URI='804774874907.dkr.ecr.us-east-1.amazonaws.com/eks-blue-green'
     export DOCKER_IMAGE=$REPOSITORY_URI:1.1.0
     export LABEL_VERSION=1-1-0
     log DOCKER_IMAGE $DOCKER_IMAGE
@@ -190,6 +193,7 @@ k8s-1.2.0-green() {
     cd "$PROJECT_DIR/k8s"
 
     source "$PROJECT_DIR/.ecr"
+    export REPOSITORY_URI='804774874907.dkr.ecr.us-east-1.amazonaws.com/eks-blue-green'
     export DOCKER_IMAGE=$REPOSITORY_URI:1.2.0
     export LABEL_VERSION=1-2-0
     log DOCKER_IMAGE $DOCKER_IMAGE
