@@ -95,8 +95,8 @@ eks-blue-green   1.1.0     21917d5201f7   8 days ago   181MB
 eks-blue-green   1.2.0     3f98e52a752b   8 days ago   181MB
 ```
 Now push those images into the ECR we created previously  
+Enter ECR URI in push-all.sh  
 ```
-Enter ECR URI in build-all.sh
 jason@DEV-52WP6M3:~/Documents/eks-blue-green$ make push-all
  EXECUTE  push-all
 Login Succeeded
@@ -180,7 +180,7 @@ kube-public       Active   6m9s
 kube-system       Active   6m9s
 ```
 Now we wil deploy blue service blue image/container
-cd to foler with make.sh
+cd to folder with make.sh
 run make k8s-1.0.0  
 ```
 jason@DEV-52WP6M3:~/Documents/eks-blue-green$ make k8s-1.0.0
@@ -228,7 +228,7 @@ We can tell which service is hitting which container via the selector defined in
 for BSBC - we ran service.yaml -> deployment.yaml and pass in ${LABEL_VERSION}  
 for GSGC - we ran service-green.yaml -> deployment.yaml and pass in ${LABEL_VERSION}  
 
-Now we can try switching blue service to hit green image/container BSGC  
+Now we can try switching blue service to hit green image/container to get BSGC  
 For this we only need to run the service.yaml and pass in the ${LABEL_VERSION} of green container  
 ```
 jason@DEV-52WP6M3:~/Documents/eks-blue-green$ make k8s-1.1.0
@@ -260,7 +260,7 @@ Check both loadbalancer, both should show green parrot
 So this is the main concept of this lab, to set up the cluster such that dev can switch production environment images to new images with virtually 0 downtime  
 Now we will try changing green service to blue container  
 
-I run the service-green.yaml but pass in  
+I run the service-green.yaml but pass in $REPOSITORY_URI:1.0.0 and LABEL_VERSION=1-0-0
 ```
 jason@DEV-52WP6M3:~/Documents/eks-blue-green/k8s$ export DOCKER_IMAGE=$REPOSITORY_URI:1.0.0
 jason@DEV-52WP6M3:~/Documents/eks-blue-green/k8s$ export LABEL_VERSION=1-0-0
@@ -286,7 +286,7 @@ deployment.apps/parrot-1-0-0   2/2     2            2           59m   parrot    
 deployment.apps/parrot-1-1-0   2/2     2            2           52m   parrot       804774874907.dkr.ecr.us-east-1.amazonaws.com/eks-blue-green:1.1.0   app=parrot,version=1-1-0
 ```  
 Observe now the deployment is BSGC and GSBC
-![BSGC GSBC](./images/BSGC%20GSBC.png)  
+![BSGC GSBC](./images/BSGC%20GSBC.PNG)  
 
 After the initial deployment of BSBC and GSGC, switch to BSGC, blue container should be deleted to save resources  
 To verify this, selector for both service should be the same (app=parrot,version=1-1-0) in this case  
