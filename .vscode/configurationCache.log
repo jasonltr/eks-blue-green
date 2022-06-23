@@ -1,0 +1,1 @@
+{"buildTargets":["build-all","destroy","dev","help","k8s-1.0.0","k8s-1.1.0","k8s-1.1.0-green","k8s-1.2.0","k8s-1.2.0-green","k8s-delete-1.0.0","kube-config","local-1.0.0","local-1.1.0","local-1.2.0","push-all","setup","tf-apply","tf-validate"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/jason/Documents/eks-blue-green'
+{ grep --extended-regexp '^[a-zA-Z0-9._-]+:.*#[[:space:]].*$'  Makefile || true; } \
+| awk 'BEGIN { FS = ":.*#[[:space:]]*" } { printf "\033[1;32m%-17s\033[0m%s\n", $1, $2 }'
+make: Leaving directory '/home/jason/Documents/eks-blue-green'
+ 
