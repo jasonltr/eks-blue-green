@@ -13,8 +13,8 @@ aws ecr get-login-password \
     --username AWS \
     --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
-source "$PROJECT_DIR/.ecr"
-export REPOSITORY_URI='804774874907.dkr.ecr.us-east-1.amazonaws.com/eks-blue-green'
+# source "$PROJECT_DIR/.ecr"
+export REPOSITORY_URI='443374801248.dkr.ecr.us-east-1.amazonaws.com/eks-blue-green'
 log push $REPOSITORY_URI:1.0.0
 docker tag $PROJECT_NAME:1.0.0 $REPOSITORY_URI:1.0.0
 docker push $REPOSITORY_URI:1.0.0

@@ -149,6 +149,7 @@ cd to infra and run
 terraform init  
 terraform fmt -recursive  
 terraform validate  
+terraform state rm module.eks.kubernetes_config_map.aws_auth (this removes previous kubeconfig, i think)
 terraform plan  
 terraform apply -auto-approve  
 This will take some time, once done verify on aws console  
