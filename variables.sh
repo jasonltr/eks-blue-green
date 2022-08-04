@@ -20,4 +20,4 @@ export AWS_PROFILE=default \
 export AWS_REGION=us-east-1 \
 export PROJECT_NAME=eks-blue-green \
 export PROJECT_DIR=/home/jason/Documents/eks-blue-green \
-export ACCOUNT_ID=804774874907 
+export ACCOUNT_ID=443374801248
