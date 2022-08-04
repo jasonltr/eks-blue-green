@@ -1,0 +1,6 @@
+Type: AWS::EKS::FargateProfile
+Properties: 
+  ClusterName: fargate-cluster3
+  PodExecutionRoleArn: arn:aws:iam::443374801248:role/eksctl-fargate-cluster3-cluster-ServiceRole-1NUJVEW00BHON
+  Selectors: 
+    - default

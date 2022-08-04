@@ -4,7 +4,7 @@ metadata:
   name: parrot-${LABEL_VERSION}
   namespace: eks-blue-green
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: parrot
