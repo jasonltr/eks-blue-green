@@ -132,7 +132,7 @@ k8s-1.0.0() {
     kubectl apply --filename namespace.yaml
 
     source "$PROJECT_DIR/.ecr"
-    export REPOSITORY_URI='804774874907.dkr.ecr.us-east-1.amazonaws.com/eks-blue-green'
+    export REPOSITORY_URI='443374801248.dkr.ecr.us-east-1.amazonaws.com/eks-blue-green'
     export DOCKER_IMAGE=$REPOSITORY_URI:1.0.0
     export LABEL_VERSION=1-0-0
     log DOCKER_IMAGE $DOCKER_IMAGE
