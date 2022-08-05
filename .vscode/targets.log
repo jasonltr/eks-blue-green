@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug  4 10:02:27 2022
+# Make data base, printed on Fri Aug  5 09:10:11 2022
 
 # Variables
 
@@ -49,7 +51,7 @@ PATH = /home/jason/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/b
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e647fedc-b448-42e0-b7d9-653ae3bda61c.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ac6aa747-414e-4ba8-853b-6220e5b6cb17.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -61,7 +63,7 @@ PWD = /home/jason/Documents/eks-blue-green
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/449_interop
+WSL_INTEROP = /run/WSL/387_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -277,8 +279,6 @@ dev:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
  
-make: *** No rule to make target 'all'.  Stop.
-
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 11):
 	./make.sh dev
@@ -324,6 +324,6 @@ k8s-delete-1.0.0:
 # strcache performance: lookups = 65 / hit rate = 35%
 # hash-table stats:
 # Load=42/8192=1%, Rehash=0, Collisions=1/65=2%
-# Finished Make data base on Thu Aug  4 10:02:27 2022
+# Finished Make data base on Fri Aug  5 09:10:11 2022
 
  
